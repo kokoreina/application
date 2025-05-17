@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Function Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(4, 150px);
+      gap: 15px;
+    }
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Function Buttons</h1>
+  <div class="button-container">
+    <button onclick="showAlert()">Alert</button>
+    <button onclick="changeBgColor()">Change BG Color</button>
+    <button onclick="logMessage()">Console Log</button>
+    <button onclick="getDateTime()">Get Date</button>
+    <button onclick="calculateSum()">Sum 2 + 3</button>
+    <button onclick="toggleText()">Toggle Text</button>
+    <button onclick="generateRandom()">Random Number</button>
+    <button onclick="askName()">Prompt Name</button>
+  </div>
+
+  <p id="toggleParagraph" style="margin-top: 20px; display:none;">This is a toggle paragraph!</p>
+
+
+</body>
+</html>
