@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Function Buttons</title>
+  <title>JavaScript Exercises</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 50px;
     }
     .button-container {
       display: grid;
-      grid-template-columns: repeat(4, 150px);
+      grid-template-columns: repeat(2, 300px);
       gap: 15px;
     }
     button {
       padding: 10px;
-      background-color: #3498db;
+      background-color: #2ecc71;
       color: white;
       border: none;
       border-radius: 5px;
@@ -27,25 +27,94 @@
       transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #2980b9;
+      background-color: #27ae60;
     }
   </style>
 </head>
 <body>
-  <h1>JavaScript Function Buttons</h1>
+  <h1>JavaScript Practice Tasks</h1>
   <div class="button-container">
-    <button onclick="showAlert()">Alert</button>
-    <button onclick="changeBgColor()">Change BG Color</button>
-    <button onclick="logMessage()">Console Log</button>
-    <button onclick="getDateTime()">Get Date</button>
-    <button onclick="calculateSum()">Sum 2 + 3</button>
-    <button onclick="toggleText()">Toggle Text</button>
-    <button onclick="generateRandom()">Random Number</button>
-    <button onclick="askName()">Prompt Name</button>
+    <button onclick="addTwoNumbers()">1. Thực hiện phép cộng hai số</button>
+    <button onclick="calculateWaterBill()">2. Nhập số đầu số cuối của đồng hồ nước và tính tiền</button>
+    <button onclick="subtractTwoNumbers()">3. Thực hiện phép trừ hai số</button>
+    <button onclick="calculateRectangleArea()">4. Tính diện tích hình chữ nhật</button>
+    <button onclick="checkDivisible()">5. Nhập 2 số (a và b) kiểm tra a có chia hết cho b không</button>
+    <button onclick="multiplyTwoNumbers()">6. Thực hiện phép nhân hai số</button>
+    <button onclick="divideTwoNumbers()">7. Thực hiện phép chia hai số</button>
+    <button onclick="calculateTotal()">8. Nhập số lượng, đơn giá và tính thành tiền</button>
   </div>
 
-  <p id="toggleParagraph" style="margin-top: 20px; display:none;">This is a toggle paragraph!</p>
+  <script>
+    function addTwoNumbers() {
+      const a = +prompt("Nhập số thứ nhất:");
+      const b = +prompt("Nhập số thứ hai:");
+      alert(`Tổng là: ${a + b}`);
+    }
 
+    function calculateWaterBill() {
+      const start = +prompt("Nhập số đầu đồng hồ nước:");
+      const end = +prompt("Nhập số cuối đồng hồ nước:");
+      if (end >= start) {
+        const total = (end - start) * 10000;
+        alert(`Thành tiền: ${total} VND`);
+      } else {
+        alert("Lỗi: Số cuối phải lớn hơn hoặc bằng số đầu.");
+      }
+    }
 
+    function subtractTwoNumbers() {
+      const a = +prompt("Nhập số thứ nhất:");
+      const b = +prompt("Nhập số thứ hai:");
+      alert(`Hiệu là: ${a - b}`);
+    }
+
+    function calculateRectangleArea() {
+      const width = +prompt("Nhập chiều rộng:");
+      const height = +prompt("Nhập chiều dài:");
+      if (width > 0 && height > 0) {
+        alert(`Diện tích hình chữ nhật: ${width * height}`);
+      } else {
+        alert("Vui lòng nhập chiều dài và chiều rộng hợp lệ (lớn hơn 0).");
+      }
+    }
+
+    function checkDivisible() {
+      const a = +prompt("Nhập số a:");
+      const b = +prompt("Nhập số b:");
+      if (isNaN(a) || isNaN(b)) {
+        alert("Vui lòng nhập cả hai số.");
+      } else if (b === 0) {
+        alert("Không thể chia cho 0.");
+      } else {
+        if (a % b === 0) {
+          alert(`${a} chia hết cho ${b}`);
+        } else {
+          alert(`${a} không chia hết cho ${b}`);
+        }
+      }
+    }
+
+    function multiplyTwoNumbers() {
+      const a = +prompt("Nhập số thứ nhất:");
+      const b = +prompt("Nhập số thứ hai:");
+      alert(`Tích là: ${a * b}`);
+    }
+
+    function divideTwoNumbers() {
+      const a = +prompt("Nhập số thứ nhất:");
+      const b = +prompt("Nhập số thứ hai:");
+      if (b === 0) {
+        alert("Không thể chia cho 0");
+      } else {
+        alert(`Thương là: ${a / b}`);
+      }
+    }
+
+    function calculateTotal() {
+      const quantity = +prompt("Nhập số lượng:");
+      const price = +prompt("Nhập đơn giá:");
+      alert(`Thành tiền: ${quantity * price} VND`);
+    }
+  </script>
 </body>
 </html>
